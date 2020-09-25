@@ -11,3 +11,14 @@ For more information, see Wikipedia [article](https://en.wikipedia.org/wiki/Bloo
 
  - *insert* adds elements.
  - *subscript* tests membership.
+ - *inserted* tests membership and adds element, more efficient than separate calls
+
+### Example
+```swift
+var filter = BloomFilter<String>(optimizedForCount: 10)
+
+filter.insert("Foo")
+filter.insert("Bar")
+
+if filter["bar"] { print("'bar' shouldn't be in the set!") }
+```
